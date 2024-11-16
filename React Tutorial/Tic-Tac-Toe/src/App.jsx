@@ -1,5 +1,7 @@
 import { useState } from "react";
+import PropsTypes from "prop-types";
 import "./App.css";
+
 function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
@@ -113,3 +115,14 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+Square.propTypes = {
+  value: PropsTypes.string,
+  onSquareClick: PropsTypes.func,
+};
+
+Board.propTypes = {
+  xIsNext: PropsTypes.bool,
+  squares: PropsTypes.array,
+  onPlay: PropsTypes.func,
+};
