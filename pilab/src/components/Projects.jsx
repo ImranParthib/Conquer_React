@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <div className="bg-gradient-to-b from-purple-50 to-white dark:from-gray-800 dark:to-gray-900">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+      <section className=" py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
@@ -57,7 +57,7 @@ const Projects = () => {
                 decimal places. Explore how algorithms like Monte Carlo,
                 Gauss-Legendre, and others help compute Pi.
               </p>
-              <a href="#" className="text-purple-600 dark:text-purple-400 hover:underline">
+              <a href="/pi-calculator" className="text-purple-600 dark:text-purple-400 hover:underline">
                 Try Pi Calculator
               </a>
             </div>
@@ -69,7 +69,7 @@ const Projects = () => {
                 Challenge yourself to memorize the digits of Pi! Track your
                 progress and see how many digits you can remember.
               </p>
-              <a href="#" className="text-purple-600 dark:text-purple-400 hover:underline">
+              <a href="/pi-memorization" className="text-purple-600 dark:text-purple-400 hover:underline">
                 Start Memorizing Pi
               </a>
             </div>
@@ -84,7 +84,7 @@ const Projects = () => {
                 interactive visualizations. Learn how Pi is used in real-world
                 applications, from calculating area to advanced mathematics.
               </p>
-              <a href="#" className="text-purple-600 dark:text-purple-400 hover:underline">
+              <a href="/visual-demonstrations" className="text-purple-600 dark:text-purple-400 hover:underline">
                 Explore Visualizations
               </a>
             </div>
