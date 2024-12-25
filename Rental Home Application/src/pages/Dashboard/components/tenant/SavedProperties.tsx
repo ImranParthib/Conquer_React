@@ -1,7 +1,9 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
 import { useSavedProperties } from '../../hooks/useSavedProperties';
-import PropertyCard from '../../../PropertyList/components/PropertyCard';
+import PropertyCard from '../owner/PropertyCard';
+
+
 
 export default function SavedProperties() {
   const { properties, loading, error } = useSavedProperties();

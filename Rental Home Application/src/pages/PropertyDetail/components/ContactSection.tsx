@@ -2,13 +2,15 @@ import React from 'react';
 import { Phone, Mail, Tag } from 'lucide-react';
 import type { Property } from '../../../types';
 import { useAuth } from '../../../hooks/useAuth';
+import PaymentButton from '../../../components/PaymentButton';
 
 interface ContactSectionProps {
   property: Property;
 }
 
 export default function ContactSection({ property }: ContactSectionProps) {
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
+  const isTenant = profile?.role === 'tenant';
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 sticky top-4">
@@ -19,6 +21,13 @@ export default function ContactSection({ property }: ContactSectionProps) {
 
       {user ? (
         <div className="space-y-4">
+          {isTenant && (
+            <PaymentButton 
+              propertyId={property.id} 
+              amount={property.price} 
+              disabled={!property.is_available}
+            />
+          )}
           <a
             href={`tel:${property.contact_phone}`}
             className="flex items-center gap-2 w-full justify-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700"

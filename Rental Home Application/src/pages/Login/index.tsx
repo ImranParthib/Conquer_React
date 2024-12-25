@@ -32,13 +32,16 @@ export default function Login() {
   const onSubmit = async (data: LoginForm) => {
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signInWithPassword(data);
+      const { user, error } = await supabase.auth.signUp({
+        email: data.email,
+        password: data.password,
+      });
       
       if (error) throw error;
       
       navigate('/dashboard');
     } catch (error) {
-      toast.error(error instanceof Error ? error.message : 'Failed to sign in');
+      toast.error(error instanceof Error ? error.message : 'Failed to sign up');
     } finally {
       setLoading(false);
     }

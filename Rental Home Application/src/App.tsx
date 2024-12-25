@@ -8,6 +8,8 @@ import PropertyDetail from './pages/PropertyDetail';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import PaymentResult from './pages/Payment/PaymentResult';
+import AdminDashboard from './pages/Admin';
 
 function App() {
   return (
@@ -22,6 +24,10 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/payment/success" element={<PaymentResult status="success" />} />
+            <Route path="/payment/fail" element={<PaymentResult status="fail" />} />
+            <Route path="/payment/cancel" element={<PaymentResult status="cancel" />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </main>
         <Toaster position="top-right" />

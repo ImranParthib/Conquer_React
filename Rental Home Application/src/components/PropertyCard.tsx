@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Bed, Bath, Tag } from 'lucide-react';
 import type { Property } from '../types';
+import SavePropertyButton from './SavePropertyButton';
 
 interface PropertyCardProps {
   property: Property;
@@ -21,6 +22,9 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           />
           <div className="absolute top-2 right-2 bg-indigo-600 text-white px-2 py-1 rounded text-sm">
             {property.property_type.replace('_', ' ')}
+          </div>
+          <div className="absolute top-2 left-2">
+            <SavePropertyButton propertyId={property.id} />
           </div>
         </div>
         <div className="p-4">

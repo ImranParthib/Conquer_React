@@ -1,6 +1,7 @@
 import React from 'react';
 import PropertyList from './PropertyList';
 import PropertyStats from './PropertyStats';
+import PaymentHistory from '../PaymentHistory';
 import { useOwnerProperties } from '../../hooks/useOwnerProperties';
 
 export default function OwnerDashboard() {
@@ -10,6 +11,7 @@ export default function OwnerDashboard() {
     <div className="space-y-8">
       <h1 className="text-3xl font-bold text-gray-900">Property Management</h1>
       <PropertyStats properties={properties} />
+      <PaymentHistory />
       <PropertyList properties={properties} loading={loading} error={error} />
     </div>
   );
