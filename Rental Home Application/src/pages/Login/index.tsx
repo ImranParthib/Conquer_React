@@ -35,6 +35,11 @@ export default function Login() {
       const { user, error } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
+        options: {
+          data: {
+            // Include any additional user metadata here
+          }
+        }
       });
       
       if (error) throw error;
